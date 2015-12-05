@@ -9,7 +9,6 @@
 import Foundation
 
 class Knight: Character {
-    private var _name = "Player"
     
     override var name: String {
         return "Knight"
