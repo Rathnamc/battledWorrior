@@ -12,6 +12,9 @@
 		83B59B521C1291B100414683 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B59B501C1291B100414683 /* Main.storyboard */; };
 		83B59B541C1291B100414683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B59B531C1291B100414683 /* Assets.xcassets */; };
 		83B59B571C1291B100414683 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B59B551C1291B100414683 /* LaunchScreen.storyboard */; };
+		83B59B5F1C12C6BE00414683 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59B5E1C12C6BE00414683 /* Character.swift */; };
+		83B59B611C12C92300414683 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59B601C12C92300414683 /* Knight.swift */; };
+		83B59B651C12CC4A00414683 /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B59B641C12CC4A00414683 /* Orc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		83B59B531C1291B100414683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B59B561C1291B100414683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B59B581C1291B100414683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83B59B5E1C12C6BE00414683 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		83B59B601C12C92300414683 /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		83B59B641C12CC4A00414683 /* Orc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				83B59B531C1291B100414683 /* Assets.xcassets */,
 				83B59B551C1291B100414683 /* LaunchScreen.storyboard */,
 				83B59B581C1291B100414683 /* Info.plist */,
+				83B59B5E1C12C6BE00414683 /* Character.swift */,
+				83B59B601C12C92300414683 /* Knight.swift */,
+				83B59B641C12CC4A00414683 /* Orc.swift */,
 			);
 			path = BattledWarrior;
 			sourceTree = "<group>";
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B59B5F1C12C6BE00414683 /* Character.swift in Sources */,
+				83B59B651C12CC4A00414683 /* Orc.swift in Sources */,
 				83B59B4F1C1291B100414683 /* ViewController.swift in Sources */,
+				83B59B611C12C92300414683 /* Knight.swift in Sources */,
 				83B59B4D1C1291B100414683 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +299,7 @@
 				83B59B5D1C1291B100414683 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

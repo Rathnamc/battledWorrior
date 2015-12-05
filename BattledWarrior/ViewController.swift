@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var enemyAttackBtn: UIButton!
+    
+    @IBOutlet weak var playerAttackBtn: UIButton!
+    
+    @IBOutlet weak var restartBtn: UIButton!
+    
+    @IBOutlet weak var printLbl: UILabel!
+    
+    @IBOutlet weak var winningLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
 
 }
