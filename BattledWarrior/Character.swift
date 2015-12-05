@@ -26,14 +26,13 @@ class Character {
         }
     }
     
+    
     var name: String {
         get {
             return _name
         }
     }
    
-    
-    
     var isAlive: Bool {
         get {
             if hp <= 0 {
