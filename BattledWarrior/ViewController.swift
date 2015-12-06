@@ -18,9 +18,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var printLbl: UILabel!
     
-    @IBOutlet weak var winningLabel: UILabel!
-    
     @IBOutlet weak var winnerLbl: UILabel!
+    
+    @IBOutlet weak var player1HpLbl: UILabel!
+    
+    @IBOutlet weak var player2HpLbl: UILabel!
+    
     
     var player1: Knight!
     var player2: Orc!
@@ -33,34 +36,74 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func Player1BtnTapped(sender: AnyObject) {
+    @IBAction func player1BtnTapped(sender: AnyObject) {
         
-        if !player2.isAlive {
-            winningLabel.text = "\(player2.name) has been killed!"
-            player2AttackBtn.enabled = false
-        } else if (player2.attackAttempt(player1.attack)) {
-            printLbl.text = "\(player1.name) attacked for \(player1.attack) HP"
-            player1AttackBtn.enabled = false
-            NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "makePlayer1Available", userInfo: nil, repeats: false)
+        
+    if (player2.attackAttempt(player1.attack)){
+        printLbl.text = "\(player1.name) attacked for \(player1.attack) Damage"
+        player2HpLbl.text = "\(player2.hp) HP"
+        player1AttackBtn.enabled = false
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "makePlayer1Available", userInfo: nil, repeats: false)
         } else {
-            unsuccessfulAttack()
+            printLbl.text = "Attack was Unsuccessful"
+            
         }
+        
+    if (!player2.isAlive){
+       winnerLbl.text = "\(player1.name) Wins!"
+        player1AttackBtn.enabled = false
+        player2HpLbl.hidden = true
+        winnerLbl.hidden = false
+        printLbl.text = ""
+        restartBtn.hidden = false
+            
+        }
+        
     }
     
-    @IBAction func player2BtnTapped(sender: AnyObject) {
+   @IBAction func player2BtnTapped(sender: AnyObject) {
         
-        if !player1.isAlive {
-            winningLabel.text = "\(player1.name) has been killed!"
-            player1AttackBtn.enabled = false
-        } else if(player1.attackAttempt(player2.attack)) {
-            printLbl.text = "\(player2.name) attacked for \(player2.attack) HP"
-            player2AttackBtn.enabled = false
-            NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "makePlayer2Available", userInfo: nil, repeats: false)
-        } else{
-            unsuccessfulAttack()
+    if(player1.attackAttempt(player2.attack)) {
+        printLbl.text = "\(player2.name) attacked for \(player2.attack) Damage"
+        player1HpLbl.text = "\(player1.hp) HP"
+        player2AttackBtn.enabled = false
+        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "makePlayer2Available", userInfo: nil, repeats: false)
+    } else {
+        printLbl.text = "Attack was Unsuccessful"
+    }
+        
+    if(!player1.isAlive) {
+        player1AttackBtn.enabled = true
+        player1HpLbl.hidden = true
+        winnerLbl.hidden = false
+        printLbl.text = ""
+        winnerLbl.text = "\(player2.name) Wins!"
+        restartBtn.hidden = false
         }
         
     }
+    
+    
+    @IBAction func restartBtnTapped(sender: AnyObject) {
+        
+        printLbl.text = "Restarting Match"
+        winnerLbl.hidden = true
+        
+        player1 = Knight(hp: 100, attack: 15, name: "Rath3063")
+        player1HpLbl.hidden = false
+        player1HpLbl.text = "\(player1.hp) HP"
+        
+        
+        player2 = Orc(hp: 100, attack: 10, name: "Oric")
+        player2HpLbl.hidden = false
+        player2HpLbl.text = "\(player2.hp) HP"
+        
+    
+        
+        
+    }
+    
+    
     
     
     func makePlayer1Available(){
